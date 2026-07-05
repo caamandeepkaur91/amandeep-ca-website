@@ -177,12 +177,7 @@
 
   /* ===== Hero ===== */
   .hero{ padding:88px 0 80px; }
-  .hero-inner{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:52px;
-    align-items:center;
-  }
+  .hero-text{ max-width:760px; }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.72rem;
@@ -206,36 +201,40 @@
     max-width:46ch;
     margin-bottom:32px;
   }
-  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:60px; }
 
-  .hero-panel{
-    background:var(--navy);
+  .stat-strip{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:36px;
+    padding:30px 32px;
+    background:rgba(22,58,94,0.045);
     border-radius:var(--radius);
-    overflow:hidden;
-    box-shadow:0 24px 50px rgba(13,42,69,0.22);
   }
-  .hero-panel-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px 22px;
-    border-bottom:1px solid rgba(255,255,255,0.12);
+  .stat-item{ display:flex; flex-direction:column; gap:8px; }
+  .stat-label{
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.68rem;
-    letter-spacing:0.1em;
+    font-size:0.66rem;
+    letter-spacing:0.08em;
     text-transform:uppercase;
-    color:#F0C089;
+    color:var(--slate);
   }
-  .hero-panel-row{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 22px;
-    border-bottom:1px solid rgba(255,255,255,0.10);
-    font-size:0.92rem;
+  .stat-value{
+    font-family:'Source Sans 3', sans-serif;
+    font-weight:700;
+    font-size:1.08rem;
+    color:var(--navy);
+    line-height:1.35;
   }
-  .hero-panel-row:last-child{ border-bottom:none; }
-  .hero-panel-row .label{ color:var(--slate-on-navy); }
-  .hero-panel-row .value{ font-family:'IBM Plex Mono', monospace; color:#fff; font-weight:500; }
+  .stat-value .dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--green);
+    margin-right:7px;
+    vertical-align:middle;
+  }
 
   /* ===== Section shell ===== */
   section{ padding:84px 0; }
@@ -330,7 +329,7 @@
 
   /* ===== Responsive ===== */
   @media (max-width: 900px){
-    .hero-inner{ grid-template-columns:1fr; }
+    .stat-strip{ grid-template-columns:repeat(2, 1fr); gap:28px; }
     .about-grid{ grid-template-columns:1fr; }
     .services-grid{ grid-template-columns:repeat(2, 1fr); }
     .why-grid{ grid-template-columns:1fr; }
@@ -338,6 +337,7 @@
     nav ul{ display:none; }
   }
   @media (max-width: 560px){
+    .stat-strip{ grid-template-columns:1fr; gap:22px; padding:26px 24px; }
     .services-grid{ grid-template-columns:1fr; }
     .contact-item{ grid-template-columns:1fr; gap:4px; }
   }
@@ -383,8 +383,8 @@
 </header>
 
 <section class="hero">
-  <div class="container hero-inner">
-    <div>
+  <div class="container">
+    <div class="hero-text">
       <div class="eyebrow">Best CA in Zira · Consultancy Across India, Online</div>
       <h1>Every filing.<br>Every audit.<br><em>Every plan, for the long run.</em></h1>
       <p class="lead">A full-service Chartered Accountancy practice handling GST, Income Tax, TDS/TCS, audits, incorporations, licensing and appeals — plus financial and tax consultancy for a sustainable future and a secure retirement. Based in Zira, serving clients across India online.</p>
@@ -393,13 +393,23 @@
         <a class="btn btn-outline" href="tel:+917740082362">Call 77400 82362</a>
       </div>
     </div>
-    <div class="hero-panel reveal">
-      <div class="hero-panel-head"><span>Firm Register</span></div>
-      <div class="hero-panel-row"><span class="label">Established</span><span class="value">March 2016</span></div>
-      <div class="hero-panel-row"><span class="label">Practice</span><span class="value">Chartered Accountancy</span></div>
-      <div class="hero-panel-row"><span class="label">Location</span><span class="value">Mohali · Zira Branch</span></div>
-      <div class="hero-panel-row"><span class="label">Services</span><span class="value">11 Verticals</span></div>
-      <div class="hero-panel-row"><span class="label">Status</span><span class="value">Open for Filings</span></div>
+    <div class="stat-strip reveal">
+      <div class="stat-item">
+        <span class="stat-label">Established Year</span>
+        <span class="stat-value">Est. March 2016</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Registration Category</span>
+        <span class="stat-value">Chartered Accountancy</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Operational Footprint</span>
+        <span class="stat-value">Zira Head Office &middot; PAN India Online</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Regulatory Status</span>
+        <span class="stat-value"><span class="dot"></span>Active Practice</span>
+      </div>
     </div>
   </div>
 </section>
