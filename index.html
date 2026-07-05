@@ -1,133 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amandeep Kaur & Co. | Chartered Accountants</title>
-    <style>
-        :root {
-            --primary: #111827;
-            --accent: #0f766e;
-            --text: #374151;
-            --light: #f9fafb;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        header p {
-            margin: 10px 0 0 0;
-            font-size: 1.1rem;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--light);
-            padding-bottom: 8px;
-            font-size: 1.5rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-        }
-        .card {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent);
-        }
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        footer {
-            background-color: var(--light);
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-            border-top: 1px solid #e5e7eb;
-            color: #6b7280;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amandeep Kaur &amp; Co. | Chartered Accountants, Zira</title>
+<meta name="description" content="Amandeep Kaur & Co., Chartered Accountants — GST, Income Tax, TDS/TCS, Audits, Incorporation, MSME, FSSAI &amp; licensing services in Zira, District Ferozepur, Punjab. Established 2016.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1D33;
+    --surface:#122A45;
+    --surface-2:#182F4E;
+    --gold:#C9A227;
+    --gold-light:#E8C766;
+    --paper:#F5F1E8;
+    --slate:#8FA0B8;
+    --rule: rgba(201,162,39,0.22);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  .container{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ===== Ruled-ledger background texture ===== */
+  .ledger-lines{
+    position:absolute;
+    inset:0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 47px,
+      var(--rule) 47px,
+      var(--rule) 48px
+    );
+    pointer-events:none;
+  }
+  .ledger-margin{
+    position:absolute;
+    top:0; bottom:0;
+    left:64px;
+    width:1px;
+    background:rgba(201,162,39,0.35);
+    pointer-events:none;
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(11,29,51,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .logo-chip{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    background:var(--paper);
+    border-radius:var(--radius);
+    border:1px solid var(--rule);
+    flex-shrink:0;
+  }
+  .logo-chip img{
+    width:34px;
+    height:auto;
+    display:block;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .brand-name{
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .brand-sub{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-top:3px;
+  }
+  nav ul{
+    display:flex;
+    gap:32px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:0.9rem;
+    color:var(--slate);
+    transition:color 0.2s ease;
+    position:relative;
+  }
+  nav a:hover, nav a:focus-visible{ color:var(--gold-light); }
+  nav a:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; }
+  .nav-toggle{ display:none; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 22px;
+    background:var(--gold);
+    color:var(--ink);
+    font-weight:600;
+    font-size:0.88rem;
+    text-decoration:none;
+    border-radius:var(--radius);
+    border:1px solid var(--gold);
+    transition:background 0.2s ease, transform 0.15s ease;
+  }
+  .btn:hover{ background:var(--gold-light); transform:translateY(-1px); }
+  .btn:focus-visible{ outline:2px solid var(--paper); outline-offset:3px; }
+  .btn-ghost{
+    background:transparent;
+    color:var(--gold-light);
+    border:1px solid var(--rule);
+  }
+  .btn-ghost:hover{ background:rgba(201,162,39,0.08); border-color:var(--gold); }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 88px;
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.2vw, 3.4rem);
+    color:var(--paper);
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+  .hero p.lead{
+    color:var(--slate);
+    font-size:1.08rem;
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .hero-ledger-card{
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:var(--radius);
+    padding:0;
+    overflow:hidden;
+  }
+  .ledger-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 22px;
+    border-bottom:1px solid var(--rule);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+  }
+  .ledger-row{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 22px;
+    border-bottom:1px solid var(--rule);
+    font-size:0.92rem;
+  }
+  .ledger-row:last-child{ border-bottom:none; }
+  .ledger-row .label{ color:var(--slate); }
+  .ledger-row .value{ font-family:'IBM Plex Mono', monospace; color:var(--paper); font-weight:500; }
+
+  /* ===== Section shell ===== */
+  section{ padding:88px 0; position:relative; }
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{
+    font-size:clamp(1.7rem, 2.8vw, 2.3rem);
+    color:var(--paper);
+  }
+  .section-head p{
+    color:var(--slate);
+    margin-top:14px;
+    font-size:1rem;
+  }
+  .divider{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:0;
+  }
+
+  /* ===== About ===== */
+  .about{ background:var(--surface); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-stat{
+    padding:24px 0;
+    border-top:1px solid var(--rule);
+  }
+  .about-stat:first-child{ border-top:none; }
+  .about-stat .num{
+    font-family:'Fraunces', serif;
+    font-size:2.2rem;
+    color:var(--gold-light);
+    display:block;
+  }
+  .about-stat .cap{
+    font-size:0.85rem;
+    color:var(--slate);
+    margin-top:4px;
+  }
+  .about-copy p{ color:var(--slate); margin-bottom:18px; max-width:60ch; }
+  .about-copy strong{ color:var(--paper); font-weight:600; }
+
+  /* ===== Services — chart-of-accounts style ledger list ===== */
+  .services-list{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid var(--rule);
+  }
+  .service-entry{
+    display:grid;
+    grid-template-columns: 64px 1fr 1.4fr;
+    gap:28px;
+    align-items:start;
+    padding:26px 0;
+    border-bottom:1px solid var(--rule);
+    transition:background 0.2s ease;
+  }
+  .service-entry:hover{ background:rgba(201,162,39,0.04); }
+  .service-code{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--gold);
+    font-size:0.95rem;
+    padding-top:4px;
+  }
+  .service-name{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--paper);
+    font-weight:500;
+  }
+  .service-desc{ color:var(--slate); font-size:0.94rem; }
+
+  /* ===== Why us ===== */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .why-card{
+    background:var(--ink);
+    padding:32px 28px;
+  }
+  .why-card .mark{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--gold);
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .why-card h3{
+    font-size:1.15rem;
+    color:var(--paper);
+    margin:14px 0 10px;
+  }
+  .why-card p{ color:var(--slate); font-size:0.93rem; margin:0; }
+
+  /* ===== Contact ===== */
+  .contact{ background:var(--surface); border-top:1px solid var(--rule); }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:56px;
+  }
+  .contact-item{
+    padding:20px 0;
+    border-top:1px solid var(--rule);
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:16px;
+  }
+  .contact-item:first-child{ border-top:none; }
+  .contact-item .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    padding-top:2px;
+  }
+  .contact-item .v a{ text-decoration:none; color:var(--paper); }
+  .contact-item .v a:hover{ color:var(--gold-light); }
+  .contact-item .v{ color:var(--paper); }
+
+  .map-note{
+    border:1px solid var(--rule);
+    padding:26px;
+    background:var(--ink);
+  }
+  .map-note h3{ color:var(--paper); font-size:1.05rem; margin-bottom:10px;}
+  .map-note p{ color:var(--slate); font-size:0.92rem; margin:0 0 18px; }
+
+  /* ===== Footer ===== */
+  footer{
+    padding:36px 0;
+    border-top:1px solid var(--rule);
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-row p{ margin:0; color:var(--slate); font-size:0.82rem; }
+
+  /* ===== Reveal on scroll ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 860px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; }
+    .why-grid{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+    nav ul{ display:none; }
+  }
+  @media (max-width: 560px){
+    .service-entry{ grid-template-columns:40px 1fr; }
+    .service-entry .service-desc{ grid-column:2; }
+    .contact-item{ grid-template-columns:1fr; gap:4px; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>Amandeep Kaur & Co.</h1>
-        <p>Chartered Accountants</p>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>About the Practice</h2>
-            <p>Welcome to the official online portal of Amandeep Kaur & Co., Chartered Accountants. We provide comprehensive professional services in the areas of statutory audits, financial consultation, tax compliance, and regulatory advisory services. Our commitment is to deliver high-quality, transparent, and precise financial guidance tailored to meet regulatory frameworks and corporate standards.</p>
-        </section>
-
-        <section>
-            <h2>Key Practice Areas</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Audit & Assurance</h3>
-                    <p>Statutory audits, internal audits, concurrent audits, and specialized financial verification services to ensure total corporate compliance.</p>
-                </div>
-                <div class="card">
-                    <h3>Taxation & Compliance</h3>
-                    <p>Comprehensive advisory services across Direct and Indirect taxation, including strategic Income Tax filing, GST compliance, and procedural tax planning.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Professional Updates</h2>
-            <p>Our regulatory notice board and technical commentary sections are currently being updated with the latest notifications from the Ministry of Corporate Affairs, ICAI, and Central Board of Direct Taxes. Please check back shortly for updates.</p>
-        </section>
+<header>
+  <div class="container nav-row">
+    <div class="brand-row">
+      <div class="logo-chip">
+        <img src="assets/ca-india-logo.png" alt="CA India logo">
+      </div>
+      <div class="brand">
+        <span class="brand-name">Amandeep Kaur &amp; Co.</span>
+        <span class="brand-sub">Chartered Accountants · Est. 2016</span>
+      </div>
     </div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="mailto:caamandeepkaur91@gmail.com">Get in Touch</a>
+  </div>
+</header>
 
-    <footer>
-        <p><strong>Amandeep Kaur & Co., Chartered Accountants</strong></p>
-        <p>Head Office: SCO 2, 3rd Floor, Plaza 117, Sector 117, Mohali, Punjab</p>
-        <p>Branch Office: Zira, Punjab</p>
-        <p>&copy; 2026 All Rights Reserved. Managed in accordance with professional regulatory guidelines.</p>
-    </footer>
+<section class="hero">
+  <div class="ledger-lines" aria-hidden="true"></div>
+  <div class="ledger-margin" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">Best CA in Zira · Consultancy Across India, Online</div>
+      <h1>Every filing.<br>Every audit.<br><em>Every plan, for the long run.</em></h1>
+      <p class="lead">A full-service Chartered Accountancy practice handling GST, Income Tax, TDS/TCS, audits, incorporations, licensing and appeals — plus financial and tax consultancy for a sustainable future and a secure retirement. Based in Zira, serving clients across India online.</p>
+      <div class="hero-cta">
+        <a class="btn" href="mailto:caamandeepkaur91@gmail.com">Email Us</a>
+        <a class="btn btn-ghost" href="tel:+917740082362">Call 77400 82362</a>
+      </div>
+    </div>
+    <div class="hero-ledger-card reveal">
+      <div class="ledger-card-head">
+        <span>Firm Register</span>
+      </div>
+      <div class="ledger-row"><span class="label">Established</span><span class="value">March 2016</span></div>
+      <div class="ledger-row"><span class="label">Practice</span><span class="value">Chartered Accountancy</span></div>
+      <div class="ledger-row"><span class="label">Location</span><span class="value">Zira · Pan-India Online</span></div>
+      <div class="ledger-row"><span class="label">Services</span><span class="value">11 Verticals</span></div>
+      <div class="ledger-row"><span class="label">Status</span><span class="value">Open for Filings</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="about-stat">
+        <span class="num mono">2016</span>
+        <span class="cap">Year the practice was established</span>
+      </div>
+      <div class="about-stat">
+        <span class="num mono">10</span>
+        <span class="cap">Distinct service verticals under one roof</span>
+      </div>
+      <div class="about-stat">
+        <span class="num mono">142047</span>
+        <span class="cap">PIN code served — Zira, District Ferozepur</span>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <div class="section-head" style="margin-bottom:24px;">
+        <div class="eyebrow">About the Firm</div>
+        <h2>A local practice, run like a proper institution.</h2>
+      </div>
+      <p><strong>Amandeep Kaur &amp; Co.</strong> is a Chartered Accountancy firm based near the Bus Stand in Zira, District Ferozepur, Punjab, established in March 2016. Over the years, the firm has grown into a one-stop compliance partner for individuals, traders, MSMEs and companies across the district.</p>
+      <p>From routine GST returns to complex appeals before tax authorities, from registering a new LLP to renewing an FSSAI licence, the firm is built to handle the full lifecycle of a business's statutory and financial obligations — so clients deal with one trusted office instead of five different consultants.</p>
+      <p>Every engagement is handled with the same discipline a ledger demands: accurate, on time, and accounted for.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2>Services, entered line by line.</h2>
+      <p>Every service the firm offers, organised the way a chart of accounts would list them — by code, not by chance.</p>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-entry">
+        <span class="service-code">01</span>
+        <span class="service-name">GST Advisory &amp; Compliance</span>
+        <span class="service-desc">Registration, monthly/quarterly returns, reconciliation, and advisory on rate classification and ITC eligibility.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">02</span>
+        <span class="service-name">Income Tax Filing &amp; Planning</span>
+        <span class="service-desc">ITR filing for individuals, firms and companies, tax planning, and computation review under both tax regimes.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">03</span>
+        <span class="service-name">TDS / TCS Compliance</span>
+        <span class="service-desc">Return filing, correction statements, certificate generation, and advisory on deduction and collection obligations.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">04</span>
+        <span class="service-name">Statutory &amp; Tax Audits</span>
+        <span class="service-desc">Audit of accounts under the Income Tax Act and Companies Act, with reporting that stands up to scrutiny.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">05</span>
+        <span class="service-name">Incorporation Services</span>
+        <span class="service-desc">Setting up Private Limited Companies, LLPs, and Partnership Firms — from name approval to first compliance.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">06</span>
+        <span class="service-name">MSME (Udyam) Registration</span>
+        <span class="service-desc">Udyam registration and related advisory to help small and medium enterprises access statutory benefits.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">07</span>
+        <span class="service-name">FSSAI Registration &amp; Licensing</span>
+        <span class="service-desc">Food business registration and licensing across basic, state, and central category requirements.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">08</span>
+        <span class="service-name">Shop &amp; Establishment Registration</span>
+        <span class="service-desc">Registration under the Shops &amp; Establishment Act for new and existing business premises.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">09</span>
+        <span class="service-name">Other Trade Licensing</span>
+        <span class="service-desc">Assistance with additional municipal and trade licences required to operate legally in your line of business.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">10</span>
+        <span class="service-name">Appeals — Income Tax, TDS &amp; GST</span>
+        <span class="service-desc">Representation and drafting for appeals and rectifications before tax authorities across all three verticals.</span>
+      </div>
+      <div class="service-entry">
+        <span class="service-code">11</span>
+        <span class="service-name">Financial &amp; Retirement Consultancy</span>
+        <span class="service-desc">Long-term financial planning, wealth structuring, and retirement-focused advisory built for a sustainable, secure future.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why This Firm</div>
+      <h2>What a decade in Zira has taught us.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="mark">Since 2016</span>
+        <h3>A decade of continuity</h3>
+        <p>Long enough to have seen multiple tax regimes change and to know how to carry a client's compliance history through each one.</p>
+      </div>
+      <div class="why-card">
+        <span class="mark">One Office</span>
+        <h3>Every service, one roof</h3>
+        <p>Tax, audit, incorporation, and licensing under a single point of contact — no shuttling between consultants.</p>
+      </div>
+      <div class="why-card">
+        <span class="mark">Pan-India, Online</span>
+        <h3>Zira roots, national reach</h3>
+        <p>Based in Zira, but consultations, filings, and advisory are available online for clients anywhere in India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="eyebrow">Get in Touch</div>
+        <h2>Bring us your filing, we'll bring the order.</h2>
+      </div>
+      <div class="contact-item">
+        <span class="k">Firm</span>
+        <span class="v">Amandeep Kaur &amp; Co., Chartered Accountants</span>
+      </div>
+      <div class="contact-item">
+        <span class="k">Address</span>
+        <span class="v">Near Bus Stand, Zira, District Ferozepur, Punjab 142047</span>
+      </div>
+      <div class="contact-item">
+        <span class="k">Phone</span>
+        <span class="v"><a href="tel:+917740082362">+91 77400 82362</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="k">Email</span>
+        <span class="v"><a href="mailto:caamandeepkaur91@gmail.com">caamandeepkaur91@gmail.com</a></span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-note">
+        <h3>Visiting the office</h3>
+        <p>The office is located near the Bus Stand in Zira, easily reachable from anywhere in Ferozepur district. Call or email ahead to schedule an appointment.</p>
+        <a class="btn" href="mailto:caamandeepkaur91@gmail.com">Write to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <div class="brand-row">
+      <div class="logo-chip" style="width:34px;height:34px;">
+        <img src="assets/ca-india-logo.png" alt="CA India logo" style="width:24px;">
+      </div>
+      <p>© <span id="year"></span> Amandeep Kaur &amp; Co., Chartered Accountants. All rights reserved.</p>
+    </div>
+    <p>Zira, District Ferozepur, Punjab 142047 · Consultancy Across India, Online</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
 
 </body>
 </html>
