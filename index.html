@@ -370,8 +370,12 @@
           <span class="v">caamandeepkaur91@gmail.com</span>
         </a>
         <a href="tel:+917740082362" role="menuitem">
-          <span class="k">Phone</span>
+          <span class="k">Phone · Zira</span>
           <span class="v">+91 77400 82362</span>
+        </a>
+        <a href="tel:+919914450422" role="menuitem">
+          <span class="k">Phone · Mohali</span>
+          <span class="v">+91 99144 50422</span>
         </a>
       </div>
     </div>
@@ -393,7 +397,7 @@
       <div class="hero-panel-head"><span>Firm Register</span></div>
       <div class="hero-panel-row"><span class="label">Established</span><span class="value">March 2016</span></div>
       <div class="hero-panel-row"><span class="label">Practice</span><span class="value">Chartered Accountancy</span></div>
-      <div class="hero-panel-row"><span class="label">Location</span><span class="value">Zira · Pan-India Online</span></div>
+      <div class="hero-panel-row"><span class="label">Location</span><span class="value">Mohali · Zira Branch</span></div>
       <div class="hero-panel-row"><span class="label">Services</span><span class="value">11 Verticals</span></div>
       <div class="hero-panel-row"><span class="label">Status</span><span class="value">Open for Filings</span></div>
     </div>
@@ -405,16 +409,17 @@
     <div class="reveal">
       <div class="about-stat"><span class="num mono">2016</span><span class="cap">Year the practice was established</span></div>
       <div class="about-stat"><span class="num mono">11</span><span class="cap">Distinct service verticals under one roof</span></div>
-      <div class="about-stat"><span class="num mono">142047</span><span class="cap">PIN code served — Zira, District Ferozepur</span></div>
+      <div class="about-stat"><span class="num mono" style="font-size:1.5rem;">PAN-INDIA</span><span class="cap">Service Coverage: Compliance &amp; Remote Corporate Advisory</span></div>
     </div>
     <div class="about-copy reveal">
       <div class="section-head" style="margin-bottom:24px;">
         <div class="eyebrow">About the Firm</div>
-        <h2>A local practice, run like a proper institution.</h2>
+        <h2>An Independent Practice, Structured as an Institution.</h2>
       </div>
-      <p><strong>Amandeep Kaur &amp; Co.</strong> is a Chartered Accountancy firm based near the Bus Stand in Zira, District Ferozepur, Punjab, established in March 2016. Over the years, the firm has grown into a one-stop compliance partner for individuals, traders, MSMEs and companies across the district.</p>
-      <p>From routine GST returns to complex appeals before tax authorities, from registering a new LLP to renewing an FSSAI licence, the firm is built to handle the full lifecycle of a business's statutory and financial obligations — so clients deal with one trusted office instead of five different consultants.</p>
-      <p>Every engagement is handled with the same discipline a ledger demands: accurate, on time, and accounted for.</p>
+      <p>Established in March 2016, <strong>Amandeep Kaur &amp; Co.</strong> is a Chartered Accountancy firm built on a singular principle: delivering the sophisticated operational discipline and structural precision of a major financial institution. With an established regional presence — strategically anchored by our office infrastructure in Mohali and our long-standing branch in Zira, District Ferozepur — our digital capabilities and compliance frameworks are engineered to serve corporate entities, MSMEs, and high-net-worth individuals seamlessly across boundaries.</p>
+      <p>Over the decade, the firm has evolved into a comprehensive, tech-enabled compliance and advisory partner. From routine GST architecture and comprehensive statutory audits to complex appellate representations before tax authorities and strategic corporate restructuring, we manage the full lifecycle of a business's financial and regulatory obligations.</p>
+      <p>By unifying corporate governance, direct and indirect taxation, and specialized audit frameworks under one roof, we eliminate operational fragmentation for our clients. Businesses partner with a single, highly institutionalized oversight office instead of managing fractured relationships with multiple independent consultants.</p>
+      <p>Every engagement is executed with the unyielding precision a ledger demands: structurally accurate, strictly on time, and completely accounted for.</p>
     </div>
   </div>
 </section>
@@ -544,14 +549,30 @@
       </div>
       <div class="contact-item"><span class="k">Firm</span><span class="v">Amandeep Kaur &amp; Co., Chartered Accountants</span></div>
       <div class="contact-item"><span class="k">Address</span><span class="v">Near Bus Stand, Zira, District Ferozepur, Punjab 142047</span></div>
-      <div class="contact-item"><span class="k">Phone</span><span class="v"><a href="tel:+917740082362">+91 77400 82362</a></span></div>
+      <div class="contact-item"><span class="k">Phone</span><span class="v"><a href="tel:+917740082362">+91 77400 82362</a> (Zira)<br><a href="tel:+919914450422">+91 99144 50422</a> (Mohali)</span></div>
       <div class="contact-item"><span class="k">Email</span><span class="v"><a href="mailto:caamandeepkaur91@gmail.com">caamandeepkaur91@gmail.com</a></span></div>
     </div>
     <div class="reveal">
       <div class="map-note">
         <h3>Visiting the office</h3>
         <p>The office is located near the Bus Stand in Zira, easily reachable from anywhere in Ferozepur district. Call or email ahead to schedule an appointment.</p>
-        <a class="btn" href="mailto:caamandeepkaur91@gmail.com">Write to Us</a>
+        <div class="contact-dropdown">
+          <button class="btn" id="writeToggle" aria-haspopup="true" aria-expanded="false">Write to Us</button>
+          <div class="contact-popover" id="writePopover" role="menu">
+            <a href="mailto:caamandeepkaur91@gmail.com" role="menuitem">
+              <span class="k">Email</span>
+              <span class="v">caamandeepkaur91@gmail.com</span>
+            </a>
+            <a href="tel:+917740082362" role="menuitem">
+              <span class="k">Phone · Zira</span>
+              <span class="v">+91 77400 82362</span>
+            </a>
+            <a href="tel:+919914450422" role="menuitem">
+              <span class="k">Phone · Mohali</span>
+              <span class="v">+91 99144 50422</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -570,18 +591,34 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  const contactToggle = document.getElementById('contactToggle');
-  const contactPopover = document.getElementById('contactPopover');
-  function closePopover(){ contactPopover.classList.remove('open'); contactToggle.setAttribute('aria-expanded', 'false'); }
-  function openPopover(){ contactPopover.classList.add('open'); contactToggle.setAttribute('aria-expanded', 'true'); }
-  contactToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    contactPopover.classList.contains('open') ? closePopover() : openPopover();
+  const dropdowns = [
+    { toggle: document.getElementById('contactToggle'), popover: document.getElementById('contactPopover') },
+    { toggle: document.getElementById('writeToggle'), popover: document.getElementById('writePopover') }
+  ];
+  function closeAll(except){
+    dropdowns.forEach(d => {
+      if (d.popover !== except) {
+        d.popover.classList.remove('open');
+        d.toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  dropdowns.forEach(d => {
+    d.toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = d.popover.classList.contains('open');
+      closeAll();
+      if (!isOpen) {
+        d.popover.classList.add('open');
+        d.toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
   document.addEventListener('click', (e) => {
-    if (!contactPopover.contains(e.target) && e.target !== contactToggle) closePopover();
+    const clickedInsideAny = dropdowns.some(d => d.popover.contains(e.target) || d.toggle === e.target);
+    if (!clickedInsideAny) closeAll();
   });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopover(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
